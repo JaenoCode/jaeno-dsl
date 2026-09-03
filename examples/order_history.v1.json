@@ -1,0 +1,20 @@
+{
+  "v": 1,
+  "type": "order_history",
+  "data": {
+    "orders": [
+      {
+        "status": "delivered",
+        "items": "Margherita x2, Cola x1",
+        "total_amount": 2650,
+        "created_at": "2026-07-10T12:30:00.000Z"
+      },
+      {
+        "status": "cancelled",
+        "items": ["Pepperoni x1"],
+        "total_amount": 1500,
+        "created_at": "2026-07-05T09:15:00.000Z"
+      }
+    ]
+  }
+}

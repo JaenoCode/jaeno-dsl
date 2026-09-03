@@ -1,0 +1,22 @@
+{
+  "v": 1,
+  "type": "menu",
+  "data": {
+    "title": "Pizza Menu",
+    "banner": "https://cdn.jaeno.ai/menus/pizza-banner.jpg",
+    "items": [
+      {
+        "name": "Margherita",
+        "price": "1200",
+        "image": "https://cdn.jaeno.ai/items/margherita.jpg",
+        "description": "Classic tomato and mozzarella."
+      },
+      {
+        "name": "Pepperoni",
+        "price": "1500",
+        "image": "https://cdn.jaeno.ai/items/pepperoni.jpg",
+        "description": "Loaded with pepperoni."
+      }
+    ]
+  }
+}

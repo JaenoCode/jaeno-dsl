@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/calculator_result.v1.json",
+  "title": "calculator_result v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "calculator_result"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "title",
+        "inputs",
+        "result_label",
+        "result_value"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "inputs": {
+          "type": "array",
+          "description": "Display labels and formatted values, never field keys or raw indices — the bot keeps no state about the card it sent, so this has to be self-contained.",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "label",
+              "value"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "value": {
+                "type": "string",
+                "description": "For a choice field this is the option's label, not its numeric value."
+              }
+            }
+          }
+        },
+        "result_label": {
+          "type": "string"
+        },
+        "result_value": {
+          "type": "string"
+        },
+        "result_unit": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

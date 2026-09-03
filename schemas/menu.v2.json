@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/menu.v2.json",
+  "title": "menu v2",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 2
+    },
+    "type": {
+      "const": "menu"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "categories"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "banner": {
+          "type": "string"
+        },
+        "orderable": {
+          "type": "boolean",
+          "description": "Menu-wide default, defaults to true if absent."
+        },
+        "categories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "name",
+              "items"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "banner": {
+                "type": "string"
+              },
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "required": [
+                    "name",
+                    "price"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "price": {
+                      "type": "string",
+                      "description": "String, matches menu.v1 item price convention."
+                    },
+                    "image": {
+                      "type": "string"
+                    },
+                    "orderable": {
+                      "type": "boolean",
+                      "description": "Per-item override of the menu-wide 'orderable' flag. Defaults to true if absent."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

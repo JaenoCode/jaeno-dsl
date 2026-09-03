@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/tip_request.v1.json",
+  "title": "tip_request v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "tip_request"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "tip_id",
+        "recipient_name"
+      ],
+      "properties": {
+        "tip_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "recipient_name": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "presets": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          },
+          "description": "Non-positive values are filtered out client-side (tip_handler.dart:43)."
+        },
+        "allow_custom": {
+          "type": "boolean"
+        },
+        "allow_decline": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

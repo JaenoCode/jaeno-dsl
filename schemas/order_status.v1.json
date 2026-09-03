@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/order_status.v1.json",
+  "title": "order_status v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "order_status"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "order_id",
+        "status"
+      ],
+      "properties": {
+        "order_id": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "description": "Free-text, not enum-restricted — preparing/ready/on_the_way/delivered are recognized client-side with a graceful fallback for anything else, matching order_history.v1's status field."
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

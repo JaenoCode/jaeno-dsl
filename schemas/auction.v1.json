@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/auction.v1.json",
+  "title": "auction v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "auction"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "auction_id",
+        "starting_price"
+      ],
+      "properties": {
+        "auction_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "starting_price": {
+          "type": "number"
+        },
+        "min_bid": {
+          "type": "number",
+          "description": "Confirmed optional via test/dsl/auction_handler_test.dart \u2014 a live auction without a stated min_bid falls back to starting_price on the client."
+        },
+        "ends_at": {
+          "type": "string",
+          "description": "ISO 8601, parsed with DateTime.tryParse (lenient, not strict RFC3339 \u2014 deliberately not asserting \"format\": \"date-time\" here since neither validator in this pipeline enforces it and Dart's own parsing is looser anyway). Confirmed optional via test \u2014 omitting it renders without a countdown, does not fail."
+        }
+      }
+    }
+  }
+}

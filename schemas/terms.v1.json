@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/terms.v1.json",
+  "title": "terms v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "terms"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "terms_id",
+        "version",
+        "title",
+        "body",
+        "signing_level"
+      ],
+      "properties": {
+        "terms_id": {
+          "type": "string",
+          "description": "Stable id for the agreement, echoed back in terms_response."
+        },
+        "version": {
+          "type": "string",
+          "description": "Agent-owned version label for this text, echoed back in terms_response. A string, not a date — the agent decides the scheme."
+        },
+        "title": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string",
+          "description": "Full agreement text, markdown. The client currently renders it as plain text (see terms_handler.dart)."
+        },
+        "signing_level": {
+          "type": "string",
+          "enum": [
+            "tap",
+            "typed",
+            "drawn"
+          ],
+          "description": "What the agent asks for. What the device actually delivered comes back as terms_response.method, which may be a lower rung after fallback (drawn -> typed -> tap)."
+        },
+        "allow_decline": {
+          "type": "boolean",
+          "description": "Defaults to true client-side — shows a Decline button that sends agreed: false."
+        }
+      }
+    }
+  }
+}

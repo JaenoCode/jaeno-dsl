@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/auction_result.v1.json",
+  "title": "auction_result v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "auction_result"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "winning_amount",
+        "is_winner"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "winning_amount": {
+          "type": "number"
+        },
+        "is_winner": {
+          "type": "boolean"
+        },
+        "order_id": {
+          "type": "string",
+          "description": "No test coverage confirming presence/absence rules. Dart defaults to '' if missing \u2014 kept optional here on that basis, not on a confirmed real payload."
+        },
+        "user_id": {
+          "type": "string",
+          "description": "Same caveat as order_id \u2014 code-derived, not confirmed against a real payload."
+        }
+      }
+    }
+  }
+}

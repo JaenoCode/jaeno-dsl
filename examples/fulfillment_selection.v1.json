@@ -1,0 +1,8 @@
+{
+  "v": 1,
+  "type": "fulfillment_selection",
+  "data": {
+    "order_id": "ord_501",
+    "method": "delivery"
+  }
+}

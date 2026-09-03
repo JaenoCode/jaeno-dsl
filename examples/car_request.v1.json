@@ -1,0 +1,9 @@
+{
+  "v": 1,
+  "type": "car_request",
+  "data": {
+    "order_id": "ord_501",
+    "title": "Share your car details",
+    "message": "So we can find you when your order is ready."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "v": 1,
+  "type": "poll_results",
+  "data": {
+    "question": "How was your delivery experience?",
+    "poll_type": "rating",
+    "menu_item": "",
+    "average_x10": 46,
+    "total_votes": 128,
+    "results": [
+      { "option": "5 stars", "percent": 62.5 },
+      { "option": "4 stars", "percent": 25.0 },
+      { "option": "3 stars", "percent": 12.5 }
+    ]
+  }
+}

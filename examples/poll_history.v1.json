@@ -1,0 +1,20 @@
+{
+  "v": 1,
+  "type": "poll_history",
+  "data": {
+    "answers": [
+      {
+        "question": "How was your delivery experience?",
+        "answer": "5",
+        "poll_type": "rating",
+        "created_at": "2026-07-10T13:00:00.000Z"
+      },
+      {
+        "question": "Which topping should we add next?",
+        "answer": "Mushroom",
+        "poll_type": "single_choice",
+        "created_at": "2026-07-05T10:00:00.000Z"
+      }
+    ]
+  }
+}

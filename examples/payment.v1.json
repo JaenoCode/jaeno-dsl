@@ -1,0 +1,13 @@
+{
+  "v": 1,
+  "type": "payment",
+  "data": {
+    "order_id": "ord_9021",
+    "user_id": "@amina:chat.jaeno.ai",
+    "amount": 2650,
+    "currency": "PKR",
+    "customer_name": "Amina Khan",
+    "business_name": "Pizza Point",
+    "created_at": "2026-07-14T12:30:00.000Z"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "type": "order_summary",
+  "data": {
+    "items": [
+      { "name": "Margherita", "qty": 2 },
+      { "name": "Cola", "qty": 1 }
+    ],
+    "total": 2650
+  }
+}

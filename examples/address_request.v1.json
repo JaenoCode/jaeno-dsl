@@ -1,0 +1,9 @@
+{
+  "v": 1,
+  "type": "address_request",
+  "data": {
+    "order_id": "ord_501",
+    "title": "Share your delivery address",
+    "message": "So we know where to bring your order."
+  }
+}

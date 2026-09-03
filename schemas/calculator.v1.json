@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/calculator.v1.json",
+  "title": "calculator v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "calculator"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "title",
+        "fields",
+        "formula",
+        "result_label"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "fields": {
+          "type": "array",
+          "maxItems": 8,
+          "description": "Capped at 8. NOT enforced by the generated model — quicktype drops maxItems — so calculator_handler.dart re-checks the cap in render() and throws, which routes to the same failed fallback card. This keyword is the contract for the bot side.",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "key",
+              "label",
+              "type"
+            ],
+            "properties": {
+              "key": {
+                "type": "string",
+                "description": "Identifier the formula references."
+              },
+              "label": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "enum": [
+                  "number",
+                  "choice"
+                ]
+              },
+              "min": {
+                "type": "number"
+              },
+              "max": {
+                "type": "number"
+              },
+              "required": {
+                "type": "boolean"
+              },
+              "options": {
+                "type": "array",
+                "description": "Required in practice when type is choice; a choice field with no options throws in render(). Not expressible here without an if/then the codegen would ignore anyway.",
+                "items": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "required": [
+                    "label",
+                    "value"
+                  ],
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "value": {
+                      "type": "number"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "formula": {
+          "type": "string",
+          "description": "Restricted arithmetic only: numeric literals, declared field keys, + - * /, unary sign, parentheses. Grammar is enforced by the hand-rolled parser in calculator_handler.dart, not here — an unparseable formula is still a well-formed JSON string."
+        },
+        "result_label": {
+          "type": "string"
+        },
+        "result_unit": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/fulfillment_selection.v1.json",
+  "title": "fulfillment_selection v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "fulfillment_selection"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "order_id",
+        "method"
+      ],
+      "properties": {
+        "order_id": {
+          "type": "string"
+        },
+        "method": {
+          "type": "string",
+          "description": "One of dine_in, pickup, car, delivery today; left as a free string rather than an enum since the agent is the source of truth for valid methods."
+        }
+      }
+    }
+  }
+}

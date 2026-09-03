@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/countdown.v1.json",
+  "title": "countdown v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "countdown"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "title",
+        "ends_at"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "The label above the timer. Required: a countdown with no label is a number with no meaning."
+        },
+        "ends_at": {
+          "type": "string",
+          "description": "ISO 8601 with offset, as produced by Python's datetime.now(timezone.utc).isoformat() — microseconds and a '+00:00' offset rather than 'Z'. Same shape the auction card already receives, parsed the same way (DateTime.tryParse, lenient; no 'format' annotation on purpose, see schemas/README.md)."
+        },
+        "subtitle": {
+          "type": "string",
+          "description": "One line of context under the timer."
+        },
+        "expired_text": {
+          "type": "string",
+          "description": "Shown once the deadline passes. Defaults client-side to 'Ended'."
+        }
+      }
+    }
+  }
+}

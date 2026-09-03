@@ -1,0 +1,33 @@
+{
+  "v": 1,
+  "type": "terms_history",
+  "data": {
+    "agreements": [
+      {
+        "terms_id": "dotcafe-delivery-waiver",
+        "title": "Delivery Waiver",
+        "version": "2026-08-01",
+        "method": "typed",
+        "signed_at": "2026-08-05T14:22:10Z",
+        "agreed": true,
+        "body": "## Delivery Waiver\n\nBy accepting delivery you agree that:\n\n1. Orders left at the door are your responsibility once the rider confirms drop-off.\n2. Refunds for a mis-delivered order must be requested within 24 hours.\n3. Contact details you provide may be shared with the assigned rider for this delivery only."
+      },
+      {
+        "terms_id": "dotcafe-delivery-waiver",
+        "title": "Delivery Waiver",
+        "version": "2026-05-14",
+        "method": "drawn",
+        "signed_at": "2026-05-20T09:03:44Z",
+        "agreed": true
+      },
+      {
+        "terms_id": "dotcafe-marketing-optin",
+        "title": "Marketing Opt-In",
+        "version": "2026-04-02",
+        "method": "tap",
+        "signed_at": "2026-04-11T18:47:02Z",
+        "agreed": false
+      }
+    ]
+  }
+}

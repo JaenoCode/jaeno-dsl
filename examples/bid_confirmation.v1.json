@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "type": "bid_confirmation",
+  "data": {
+    "auction_id": "auc_test_1",
+    "title": "Vintage Leather Jacket",
+    "currency": "PKR",
+    "amount": 5500
+  }
+}

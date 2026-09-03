@@ -1,0 +1,22 @@
+{
+  "v": 3,
+  "type": "order_confirmation",
+  "data": {
+    "order_id": "ord_9042",
+    "user_id": "@amina:chat.jaeno.ai",
+    "customer_name": "Amina Khan",
+    "currency": "PKR",
+    "total_amount": 2650,
+    "location": "DHA Phase 5, Karachi",
+    "created_at": "2026-07-14T12:30:00.000Z",
+    "raw_order_text": "2x Margherita, 1x Cola",
+    "items": [
+      { "name": "Margherita", "qty": 2, "price": 1200, "image": "" },
+      { "name": "Cola", "qty": 1, "price": 250, "image": "" }
+    ],
+    "fulfillment": {
+      "method": "delivery",
+      "summary": "123 Main St, Apt 4, Lahore"
+    }
+  }
+}

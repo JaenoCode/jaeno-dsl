@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/appointment.v1.json",
+  "title": "appointment v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "appointment"
+    },
+    "data": {
+      "type": "object",
+      "description": "Trigger-only card. Fields beyond 'title' are not read by AppointmentDSLHandler today \u2014 the booking form itself is entirely client-side state (date/time/service), not agent-supplied.",
+      "additionalProperties": true,
+      "properties": {
+        "title": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

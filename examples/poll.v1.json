@@ -1,0 +1,13 @@
+{
+  "v": 1,
+  "type": "poll",
+  "data": {
+    "poll_id": "poll_44",
+    "question": "How was your delivery experience?",
+    "poll_type": "rating",
+    "options": [],
+    "allow_multiple": false,
+    "rating_style": "stars",
+    "rating_max": 5
+  }
+}

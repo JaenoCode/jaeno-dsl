@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "type": "tip_selected",
+  "data": {
+    "currency": "PKR",
+    "amount": 100,
+    "custom": false,
+    "recipient_name": "Bilal (Rider)"
+  }
+}

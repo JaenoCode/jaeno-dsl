@@ -1,0 +1,12 @@
+{
+  "v": 1,
+  "type": "auction_result",
+  "data": {
+    "title": "Vintage Leather Jacket",
+    "currency": "PKR",
+    "winning_amount": 6200,
+    "is_winner": true,
+    "order_id": "ord_9021",
+    "user_id": "@amina:chat.jaeno.ai"
+  }
+}

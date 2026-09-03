@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/poll_history.v1.json",
+  "title": "poll_history v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "poll_history"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "answers"
+      ],
+      "properties": {
+        "answers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "answer": {
+                "type": "string",
+                "description": "Free text regardless of the originating poll_type \u2014 e.g. a rating comes through as the stringified number ('5')."
+              },
+              "poll_type": {
+                "type": "string",
+                "enum": [
+                  "single_choice",
+                  "multi_select",
+                  "yes_no",
+                  "rating",
+                  "open_text",
+                  "ranking"
+                ]
+              },
+              "created_at": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/reminder.v1.json",
+  "title": "reminder v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "reminder"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "variant": {
+          "type": "string",
+          "description": "Confirmed optional via test/dsl/reminder_handler_test.dart (defaults to 'default'). Observed values: default, urgent \u2014 not a closed enum."
+        },
+        "title": {
+          "type": "string",
+          "description": "Confirmed optional via test (defaults to 'Reminder')."
+        },
+        "message": {
+          "type": "string"
+        },
+        "time": {
+          "type": "string",
+          "description": "Confirmed optional via test. Free-text, not ISO 8601 in the observed examples ('Tomorrow at 3:00 PM')."
+        }
+      }
+    }
+  }
+}

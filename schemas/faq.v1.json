@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/faq.v1.json",
+  "title": "faq v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "faq"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "items"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Card headline. Defaults client-side to 'FAQ'."
+        },
+        "items": {
+          "type": "array",
+          "description": "One entry renders expanded — the direct answer to one question (JNO-55). Several render as a collapsed accordion to browse (JNO-56). One type either way: the agent sends what it has and the card decides how to show it.",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "question",
+              "answer"
+            ],
+            "properties": {
+              "question": {
+                "type": "string"
+              },
+              "answer": {
+                "type": "string",
+                "description": "Plain text. Markdown is not rendered — widget_library has no markdown renderer (same as terms.body)."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

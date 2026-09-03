@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/order_confirmation.v2.json",
+  "title": "order_confirmation v2",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 2
+    },
+    "type": {
+      "const": "order_confirmation"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "order_id",
+        "items"
+      ],
+      "properties": {
+        "order_id": {
+          "type": "string"
+        },
+        "user_id": {
+          "type": "string"
+        },
+        "customer_name": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "total_amount": {
+          "type": "number",
+          "description": "No client-side fallback (msg.get<num>, no '??') — genuinely optional/nullable on the wire, unlike most other numeric fields in this inventory which default to 0."
+        },
+        "location": {
+          "type": "string"
+        },
+        "created_at": {
+          "type": "string"
+        },
+        "raw_order_text": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "qty": {
+                "type": "number"
+              },
+              "price": {
+                "type": "number",
+                "description": "Nullable — OrderItem.price stays null if the field isn't a num (order_confirmation_dsl_handler.dart:33-38), no default applied."
+              },
+              "image": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "fulfillment": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "New in v2 (JNO-184/185). A flat, display-ready summary of the chosen fulfillment method — the agent has already received the structured fulfillment_selection/name_response/car_response/address_response events and composes this itself.",
+          "properties": {
+            "method": {
+              "type": "string",
+              "description": "dine_in / pickup / car / delivery"
+            },
+            "summary": {
+              "type": "string",
+              "description": "e.g. the customer name, or the car/address one-line summary"
+            }
+          }
+        }
+      }
+    }
+  }
+}

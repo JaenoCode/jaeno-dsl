@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "type": "reminder",
+  "data": {
+    "variant": "default",
+    "title": "Appointment Reminder",
+    "message": "Your appointment with Dr. Khan is coming up.",
+    "time": "Tomorrow at 3:00 PM"
+  }
+}

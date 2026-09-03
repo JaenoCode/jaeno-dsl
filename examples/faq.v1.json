@@ -1,0 +1,21 @@
+{
+  "v": 1,
+  "type": "faq",
+  "data": {
+    "title": "Delivery FAQs",
+    "items": [
+      {
+        "question": "How long does delivery take?",
+        "answer": "Most orders arrive within 30 to 45 minutes. At peak times on Friday and Saturday evenings it can take up to an hour."
+      },
+      {
+        "question": "Can I change my order after placing it?",
+        "answer": "Yes, within 5 minutes of ordering. After that the kitchen has already started and the order can no longer be changed."
+      },
+      {
+        "question": "What happens if I am not home?",
+        "answer": "The rider calls you and waits 5 minutes. If there is no answer the order is left at the door and marked as delivered."
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/menu_category.v1.json",
+  "title": "menu_category v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "menu_category"
+    },
+    "data": {
+      "type": "object",
+      "description": "JNO-112 'highlighted single category' card. No observed call site anywhere in this repo as of this schema's writing \u2014 code-derived from MenuCategoryDSLHandler only. Confirm this type is actually emitted before trusting this schema in CI.",
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "banner": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "description": "Passed straight through to the items sheet untyped in the handler (List, not parsed into a model here) \u2014 item shape assumed to match menu.v1 items.",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    }
+  }
+}

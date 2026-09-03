@@ -1,0 +1,12 @@
+{
+  "v": 1,
+  "type": "address_response",
+  "data": {
+    "order_id": "ord_501",
+    "label": "Home",
+    "line1": "123 Main St",
+    "line2": "Apt 4",
+    "city": "Lahore",
+    "notes": "Gate code 4521"
+  }
+}

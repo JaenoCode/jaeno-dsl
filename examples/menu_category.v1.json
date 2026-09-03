@@ -1,0 +1,15 @@
+{
+  "v": 1,
+  "type": "menu_category",
+  "data": {
+    "name": "Pizzas",
+    "banner": "",
+    "items": [
+      {
+        "name": "Margherita",
+        "price": "1200",
+        "image": "https://cdn.jaeno.ai/items/margherita.jpg"
+      }
+    ]
+  }
+}

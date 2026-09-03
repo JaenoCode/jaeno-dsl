@@ -1,0 +1,14 @@
+{
+  "v": 1,
+  "type": "tip_request",
+  "data": {
+    "tip_id": "tip_301",
+    "title": "Add a Tip?",
+    "message": "Your rider worked hard to get this to you fast.",
+    "recipient_name": "Bilal (Rider)",
+    "currency": "PKR",
+    "presets": [50, 100, 200],
+    "allow_custom": true,
+    "allow_decline": true
+  }
+}

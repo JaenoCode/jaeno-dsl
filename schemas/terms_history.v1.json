@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/terms_history.v1.json",
+  "title": "terms_history v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "terms_history"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "agreements"
+      ],
+      "properties": {
+        "agreements": {
+          "type": "array",
+          "description": "Agent-supplied, newest first. The agent owns the stored contracts (JNO-97) — the client only renders what it is handed.",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "terms_id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "version": {
+                "type": "string",
+                "description": "The version of the terms that was actually presented — JNO-98's point is that each record names its own text."
+              },
+              "method": {
+                "type": "string",
+                "enum": [
+                  "tap",
+                  "typed",
+                  "drawn"
+                ],
+                "description": "As delivered by the device, echoed from terms_response.method — not the signing_level the agent asked for."
+              },
+              "signed_at": {
+                "type": "string"
+              },
+              "body": {
+                "type": "string",
+                "description": "The agreement text as it read at this version, markdown. Optional: without it the row shows only the metadata, with it the row opens the full document the customer signed (JNO-97's 'view a copy'). Send the stored copy, never today's constant."
+              },
+              "agreed": {
+                "type": "boolean",
+                "description": "Defaults to true client-side. Present so a history that includes declines renders them as declines rather than as agreements."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "type": "banner",
+  "data": {
+    "variant": "outage",
+    "title": "Service Disruption",
+    "message": "Payments are currently down.",
+    "meta": "Affected: Payments · ETA: 2:00 PM"
+  }
+}

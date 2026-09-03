@@ -1,0 +1,9 @@
+{
+  "v": 1,
+  "type": "fulfillment_method",
+  "data": {
+    "order_id": "ord_501",
+    "title": "How would you like to receive your order?",
+    "message": "Pick one to continue."
+  }
+}

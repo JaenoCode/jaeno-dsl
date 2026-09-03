@@ -1,0 +1,12 @@
+{
+  "v": 1,
+  "type": "car_response",
+  "data": {
+    "order_id": "ord_501",
+    "label": "My car",
+    "make": "Toyota",
+    "model": "Corolla",
+    "color": "White",
+    "plate_number": "ABC-123"
+  }
+}

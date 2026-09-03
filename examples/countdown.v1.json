@@ -1,0 +1,10 @@
+{
+  "v": 1,
+  "type": "countdown",
+  "data": {
+    "title": "Free to cancel",
+    "ends_at": "2026-08-06T14:32:00.123456+00:00",
+    "subtitle": "Reply \"cancel\" to cancel your order",
+    "expired_text": "Cancellation window closed"
+  }
+}

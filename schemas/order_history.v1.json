@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/order_history.v1.json",
+  "title": "order_history v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "order_history"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "orders"
+      ],
+      "properties": {
+        "orders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "items": {
+                "description": "Genuinely polymorphic on the wire today \u2014 order_history_dsl_handler.dart:166-192 explicitly normalizes 'real List, clean comma string, and stringified Python list'. Schema allows the two intentional shapes (array or plain string); the stringified-Python-list case is a parsing workaround for a malformed string, not a shape to encode as valid. Flag to the agent side rather than treat as permanent.",
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  }
+                ]
+              },
+              "total_amount": {
+                "type": "number"
+              },
+              "created_at": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

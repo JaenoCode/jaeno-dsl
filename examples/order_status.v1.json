@@ -1,0 +1,9 @@
+{
+  "v": 1,
+  "type": "order_status",
+  "data": {
+    "order_id": "ord_501",
+    "status": "preparing",
+    "message": "Your order is being prepared."
+  }
+}

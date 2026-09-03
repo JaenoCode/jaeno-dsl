@@ -1,0 +1,69 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/poll_results.v1.json",
+  "title": "poll_results v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "poll_results"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "question"
+      ],
+      "properties": {
+        "question": {
+          "type": "string"
+        },
+        "poll_type": {
+          "type": "string",
+          "enum": [
+            "single_choice",
+            "multi_select",
+            "yes_no",
+            "rating",
+            "open_text",
+            "ranking"
+          ]
+        },
+        "menu_item": {
+          "type": "string"
+        },
+        "average_x10": {
+          "type": "integer",
+          "description": "Fixed-point: real average = average_x10 / 10.0. Only meaningful for poll_type = rating."
+        },
+        "total_votes": {
+          "type": "integer"
+        },
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "option": {
+                "type": "string"
+              },
+              "percent": {
+                "type": "number"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

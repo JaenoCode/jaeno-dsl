@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/menu_item.v1.json",
+  "title": "menu_item v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "menu_item"
+    },
+    "data": {
+      "type": "object",
+      "description": "JNO-111 'highlighted single item' card. No observed call site anywhere in this repo as of this schema's writing \u2014 every field below is code-derived from MenuItemDSLHandler, not confirmed against a real agent payload. Confirm this type is actually emitted before trusting this schema in CI.",
+      "additionalProperties": true,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

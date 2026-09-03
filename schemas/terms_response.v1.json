@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/terms_response.v1.json",
+  "title": "terms_response v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "terms_response"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "terms_id",
+        "version",
+        "agreed",
+        "method",
+        "signed_at"
+      ],
+      "properties": {
+        "terms_id": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "description": "Echoed from the terms card, so the record names the exact text that was agreed to."
+        },
+        "agreed": {
+          "type": "boolean",
+          "description": "false when the customer declined."
+        },
+        "method": {
+          "type": "string",
+          "enum": [
+            "tap",
+            "typed",
+            "drawn"
+          ],
+          "description": "What the device actually delivered, NOT what terms.signing_level asked for. This is the field the signed record has to store."
+        },
+        "signature": {
+          "type": "string",
+          "description": "Absent for method 'tap' and for declines. The typed name for 'typed'; a base64 PNG (no data: prefix, capped well under the ~64KB Matrix event limit) for 'drawn'."
+        },
+        "signed_at": {
+          "type": "string",
+          "description": "ISO 8601 UTC, e.g. 2026-08-05T14:22:10Z. No 'format' annotation on purpose — see schemas/README.md on ajv strict mode and quicktype's strict DateTime.parse."
+        }
+      }
+    }
+  }
+}

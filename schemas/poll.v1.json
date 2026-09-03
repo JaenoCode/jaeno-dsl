@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/poll.v1.json",
+  "title": "poll v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "poll"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "poll_id",
+        "question",
+        "poll_type"
+      ],
+      "properties": {
+        "poll_id": {
+          "type": "string"
+        },
+        "question": {
+          "type": "string"
+        },
+        "poll_type": {
+          "type": "string",
+          "enum": [
+            "single_choice",
+            "multi_select",
+            "yes_no",
+            "rating",
+            "open_text",
+            "ranking"
+          ],
+          "description": "All 6 values documented at poll_dsl_handler.dart:37 and have a dedicated render branch (_PollBody switch, ~line 352). Only 'rating' is covered by examples/poll.v1.json \u2014 the other 5 are enumerated from code/comment, not from a captured real payload."
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Required for single_choice/multi_select/ranking; meaningless for rating/open_text but the client tolerates an empty or absent array either way."
+        },
+        "allow_multiple": {
+          "type": "boolean"
+        },
+        "rating_style": {
+          "type": "string",
+          "description": "Only relevant when poll_type = rating. Default 'stars'."
+        },
+        "rating_max": {
+          "type": "integer",
+          "description": "Only relevant when poll_type = rating. Default 5."
+        },
+        "chain_id": {
+          "type": "string",
+          "description": "Groups the questions of one flow into a single card: polls carrying the same chain_id share one card, which steps through them one question at a time, instead of arriving as separate tiles (packages/widget_library/lib/models/poll_chain.dart). The whole group may be sent at once — no need to wait for each answer. Send it on every question in the group, including the first. OMIT it for a question that should stand on its own — a confirmation, say — and never reuse a group's value for one, or that question lands inside the card the customer just finished. Any stable string works; the order id is the natural choice."
+        }
+      }
+    }
+  }
+}

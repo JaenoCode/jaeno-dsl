@@ -1,0 +1,13 @@
+{
+  "v": 1,
+  "type": "auction",
+  "data": {
+    "auction_id": "auc_test_1",
+    "title": "Vintage Leather Jacket",
+    "image": "",
+    "currency": "PKR",
+    "starting_price": 5000,
+    "min_bid": 5200,
+    "ends_at": "2026-07-14T18:00:00.000Z"
+  }
+}
