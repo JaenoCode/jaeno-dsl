@@ -1,0 +1,32 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "created_at": "2026-07-14T12:30:00.000Z",
+      "currency": "PKR",
+      "customer_name": "Amina Khan",
+      "items": [
+        {
+          "image": "",
+          "name": "Margherita",
+          "price": 1200,
+          "qty": 2
+        },
+        {
+          "image": "",
+          "name": "Cola",
+          "price": 250,
+          "qty": 1
+        }
+      ],
+      "location": "DHA Phase 5, Karachi",
+      "order_id": "ord_9021",
+      "raw_order_text": "2x Margherita, 1x Cola",
+      "total_amount": 2650,
+      "user_id": "@amina:chat.jaeno.ai"
+    },
+    "type": "order_confirmation",
+    "v": 1
+  },
+  "body": "Order confirmed",
+  "msgtype": "m.text"
+}

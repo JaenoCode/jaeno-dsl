@@ -1,0 +1,14 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "message": "Payments are currently down.",
+      "meta": "Affected: Payments \u00b7 ETA: 2:00 PM",
+      "title": "Service Disruption",
+      "variant": "outage"
+    },
+    "type": "banner",
+    "v": 1
+  },
+  "body": "Service Disruption \u2014 Payments are currently down.",
+  "msgtype": "m.text"
+}

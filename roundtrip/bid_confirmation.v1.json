@@ -1,0 +1,14 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "amount": 5500,
+      "auction_id": "auc_test_1",
+      "currency": "PKR",
+      "title": "Vintage Leather Jacket"
+    },
+    "type": "bid_confirmation",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

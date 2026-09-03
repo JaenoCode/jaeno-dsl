@@ -1,0 +1,34 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "jaeno-dsl"
+version = "0.2.0"
+description = "Constructs schema-valid ai.jaeno.dsl Matrix event content for the agent/bot side. Generated from the schemas in this repo."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2"]
+
+[project.urls]
+Repository = "https://github.com/JaenoCode/jaeno-dsl"
+
+[dependency-groups]
+dev = ["pytest>=8"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["jaeno_dsl"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+# python/scripts/generate_models.sh and the python CI check both read this,
+# so the generated tree and the hand-written code are held to one config.
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+line_length = 100

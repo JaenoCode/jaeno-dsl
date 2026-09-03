@@ -1,0 +1,13 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "method": "pickup",
+      "name": "Alice",
+      "order_id": "ord_501"
+    },
+    "type": "name_response",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

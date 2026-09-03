@@ -1,0 +1,13 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "message": "So we know where to bring your order.",
+      "order_id": "ord_501",
+      "title": "Share your delivery address"
+    },
+    "type": "address_request",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

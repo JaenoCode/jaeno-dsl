@@ -1,0 +1,29 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "average_x10": 46,
+      "menu_item": "",
+      "poll_type": "rating",
+      "question": "How was your delivery experience?",
+      "results": [
+        {
+          "option": "5 stars",
+          "percent": 62.5
+        },
+        {
+          "option": "4 stars",
+          "percent": 25.0
+        },
+        {
+          "option": "3 stars",
+          "percent": 12.5
+        }
+      ],
+      "total_votes": 128
+    },
+    "type": "poll_results",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

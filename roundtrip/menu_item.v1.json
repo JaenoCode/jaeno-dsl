@@ -1,0 +1,14 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "description": "Classic tomato and mozzarella.",
+      "image": "https://cdn.jaeno.ai/items/margherita.jpg",
+      "name": "Margherita",
+      "price": "1200"
+    },
+    "type": "menu_item",
+    "v": 1
+  },
+  "body": "Margherita \u2014 1200",
+  "msgtype": "m.text"
+}

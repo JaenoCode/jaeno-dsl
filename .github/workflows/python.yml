@@ -1,0 +1,29 @@
+name: Python package
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - name: Regenerate models and fail on drift
+        run: |
+          ./python/scripts/generate_models.sh
+          git diff --exit-code \
+            python/jaeno_dsl/models/generated/ \
+            python/jaeno_dsl/cards.py \
+            roundtrip/ || {
+            echo ""
+            echo "❌ python/jaeno_dsl/{models/generated/,cards.py} or roundtrip/ is stale —"
+            echo "   a schema changed without regenerating. Run"
+            echo "   ./python/scripts/generate_models.sh and commit the result."
+            exit 1
+          }
+      - name: Check formatting
+        run: uvx --from 'black==24.10.0' black --check --config python/pyproject.toml python
+      - name: Test
+        run: uv run --no-project --with 'pydantic>=2' --with 'pytest>=8' python -m pytest python -q

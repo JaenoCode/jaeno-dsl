@@ -1,0 +1,16 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "agreed": true,
+      "method": "typed",
+      "signature": "Adnan Shahzad",
+      "signed_at": "2026-08-05T14:22:10Z",
+      "terms_id": "dotcafe-delivery-waiver",
+      "version": "2026-08-01"
+    },
+    "type": "terms_response",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

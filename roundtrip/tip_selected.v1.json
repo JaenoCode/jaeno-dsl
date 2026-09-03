@@ -1,0 +1,14 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "amount": 100,
+      "currency": "PKR",
+      "custom": false,
+      "recipient_name": "Bilal (Rider)"
+    },
+    "type": "tip_selected",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

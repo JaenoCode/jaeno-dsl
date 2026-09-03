@@ -1,0 +1,16 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "allow_decline": true,
+      "body": "## Delivery Waiver\n\nBy accepting delivery you agree that:\n\n1. Orders left at the door are your responsibility once the rider confirms drop-off.\n2. Refunds for a mis-delivered order must be requested within 24 hours.\n3. Contact details you provide may be shared with the assigned rider for this delivery only.",
+      "signing_level": "drawn",
+      "terms_id": "dotcafe-delivery-waiver",
+      "title": "Delivery Waiver",
+      "version": "2026-08-01"
+    },
+    "type": "terms",
+    "v": 1
+  },
+  "body": "Agreement \u2014 Delivery Waiver",
+  "msgtype": "m.text"
+}

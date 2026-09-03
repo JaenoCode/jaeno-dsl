@@ -1,0 +1,16 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "currency": "PKR",
+      "is_winner": true,
+      "order_id": "ord_9021",
+      "title": "Vintage Leather Jacket",
+      "user_id": "@amina:chat.jaeno.ai",
+      "winning_amount": 6200
+    },
+    "type": "auction_result",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

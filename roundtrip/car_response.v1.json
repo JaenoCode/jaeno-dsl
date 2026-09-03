@@ -1,0 +1,16 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "color": "White",
+      "label": "My car",
+      "make": "Toyota",
+      "model": "Corolla",
+      "order_id": "ord_501",
+      "plate_number": "ABC-123"
+    },
+    "type": "car_response",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

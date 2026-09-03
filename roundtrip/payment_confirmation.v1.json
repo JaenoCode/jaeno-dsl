@@ -1,0 +1,16 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "amount": 2650,
+      "business_name": "Pizza Point",
+      "created_at": "2026-07-14T12:35:00.000Z",
+      "currency": "PKR",
+      "customer_name": "Amina Khan",
+      "order_id": "ord_9021"
+    },
+    "type": "payment_confirmation",
+    "v": 1
+  },
+  "body": "Payment confirmed",
+  "msgtype": "m.text"
+}

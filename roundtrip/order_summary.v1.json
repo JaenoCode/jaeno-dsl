@@ -1,0 +1,21 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "items": [
+        {
+          "name": "Margherita",
+          "qty": 2
+        },
+        {
+          "name": "Cola",
+          "qty": 1
+        }
+      ],
+      "total": 2650
+    },
+    "type": "order_summary",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

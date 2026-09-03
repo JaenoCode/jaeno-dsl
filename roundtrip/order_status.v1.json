@@ -1,0 +1,13 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "message": "Your order is being prepared.",
+      "order_id": "ord_501",
+      "status": "preparing"
+    },
+    "type": "order_status",
+    "v": 1
+  },
+  "body": "Order status \u2014 preparing",
+  "msgtype": "m.text"
+}

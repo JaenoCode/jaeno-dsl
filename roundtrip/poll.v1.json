@@ -1,0 +1,17 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "allow_multiple": false,
+      "options": [],
+      "poll_id": "poll_44",
+      "poll_type": "rating",
+      "question": "How was your delivery experience?",
+      "rating_max": 5,
+      "rating_style": "stars"
+    },
+    "type": "poll",
+    "v": 1
+  },
+  "body": "How was your delivery experience?",
+  "msgtype": "m.text"
+}

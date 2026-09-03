@@ -1,0 +1,13 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "message": "Pick one to continue.",
+      "order_id": "ord_501",
+      "title": "How would you like to receive your order?"
+    },
+    "type": "fulfillment_method",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

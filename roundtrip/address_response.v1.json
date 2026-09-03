@@ -1,0 +1,16 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "city": "Lahore",
+      "label": "Home",
+      "line1": "123 Main St",
+      "line2": "Apt 4",
+      "notes": "Gate code 4521",
+      "order_id": "ord_501"
+    },
+    "type": "address_response",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

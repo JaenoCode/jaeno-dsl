@@ -1,0 +1,14 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "ends_at": "2026-08-06T14:32:00.123456+00:00",
+      "expired_text": "Cancellation window closed",
+      "subtitle": "Reply \"cancel\" to cancel your order",
+      "title": "Free to cancel"
+    },
+    "type": "countdown",
+    "v": 1
+  },
+  "body": "Free to cancel \u2014 Reply \"cancel\" to cancel your order",
+  "msgtype": "m.text"
+}

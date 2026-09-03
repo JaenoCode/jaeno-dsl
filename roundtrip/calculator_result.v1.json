@@ -1,0 +1,28 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "inputs": [
+        {
+          "label": "Number of guests",
+          "value": "40"
+        },
+        {
+          "label": "Hours",
+          "value": "3"
+        },
+        {
+          "label": "Package",
+          "value": "Premium"
+        }
+      ],
+      "result_label": "Estimated total",
+      "result_unit": "PKR",
+      "result_value": "62000",
+      "title": "Catering estimate"
+    },
+    "type": "calculator_result",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

@@ -1,0 +1,39 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "banner": "https://cdn.jaeno.ai/menus/full-banner.jpg",
+      "categories": [
+        {
+          "banner": "",
+          "items": [
+            {
+              "image": "https://cdn.jaeno.ai/items/margherita.jpg",
+              "name": "Margherita",
+              "orderable": true,
+              "price": "1200"
+            }
+          ],
+          "name": "Pizzas"
+        },
+        {
+          "banner": "",
+          "items": [
+            {
+              "image": "",
+              "name": "Cola",
+              "orderable": true,
+              "price": "250"
+            }
+          ],
+          "name": "Drinks"
+        }
+      ],
+      "orderable": true,
+      "title": "Full Menu"
+    },
+    "type": "menu",
+    "v": 2
+  },
+  "body": "Menu \u2014 Full Menu",
+  "msgtype": "m.text"
+}

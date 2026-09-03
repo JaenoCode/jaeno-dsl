@@ -1,0 +1,48 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "fields": [
+        {
+          "key": "guests",
+          "label": "Number of guests",
+          "max": 200,
+          "min": 1,
+          "required": true,
+          "type": "number"
+        },
+        {
+          "key": "hours",
+          "label": "Hours",
+          "min": 1,
+          "required": true,
+          "type": "number"
+        },
+        {
+          "key": "tier",
+          "label": "Package",
+          "options": [
+            {
+              "label": "Standard",
+              "value": 850
+            },
+            {
+              "label": "Premium",
+              "value": 1400
+            }
+          ],
+          "required": true,
+          "type": "choice"
+        }
+      ],
+      "formula": "guests * tier + hours * 2000",
+      "result_label": "Estimated total",
+      "result_unit": "PKR",
+      "subtitle": "Rough guide, we'll confirm on the call",
+      "title": "Catering estimate"
+    },
+    "type": "calculator",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

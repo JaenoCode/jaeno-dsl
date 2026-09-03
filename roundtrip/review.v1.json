@@ -1,0 +1,12 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "menu_item": "Margherita",
+      "order_id": "ord_9021"
+    },
+    "type": "review",
+    "v": 1
+  },
+  "body": "Leave a review",
+  "msgtype": "m.text"
+}

@@ -1,0 +1,19 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "banner": "",
+      "items": [
+        {
+          "image": "https://cdn.jaeno.ai/items/margherita.jpg",
+          "name": "Margherita",
+          "price": "1200"
+        }
+      ],
+      "name": "Pizzas"
+    },
+    "type": "menu_category",
+    "v": 1
+  },
+  "body": "Menu \u2014 Pizzas",
+  "msgtype": "m.text"
+}

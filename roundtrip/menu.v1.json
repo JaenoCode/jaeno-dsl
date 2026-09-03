@@ -1,0 +1,26 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "banner": "https://cdn.jaeno.ai/menus/pizza-banner.jpg",
+      "items": [
+        {
+          "description": "Classic tomato and mozzarella.",
+          "image": "https://cdn.jaeno.ai/items/margherita.jpg",
+          "name": "Margherita",
+          "price": "1200"
+        },
+        {
+          "description": "Loaded with pepperoni.",
+          "image": "https://cdn.jaeno.ai/items/pepperoni.jpg",
+          "name": "Pepperoni",
+          "price": "1500"
+        }
+      ],
+      "title": "Pizza Menu"
+    },
+    "type": "menu",
+    "v": 1
+  },
+  "body": "Menu \u2014 Pizza Menu",
+  "msgtype": "m.text"
+}

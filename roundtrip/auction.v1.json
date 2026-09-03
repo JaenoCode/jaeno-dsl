@@ -1,0 +1,17 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "auction_id": "auc_test_1",
+      "currency": "PKR",
+      "ends_at": "2026-07-14T18:00:00.000Z",
+      "image": "",
+      "min_bid": 5200,
+      "starting_price": 5000,
+      "title": "Vintage Leather Jacket"
+    },
+    "type": "auction",
+    "v": 1
+  },
+  "body": "Auction \u2014 Vintage Leather Jacket",
+  "msgtype": "m.text"
+}

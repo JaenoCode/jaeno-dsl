@@ -1,0 +1,12 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "method": "delivery",
+      "order_id": "ord_501"
+    },
+    "type": "fulfillment_selection",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

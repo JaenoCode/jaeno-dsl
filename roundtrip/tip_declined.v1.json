@@ -1,0 +1,11 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "recipient_name": "Bilal (Rider)"
+    },
+    "type": "tip_declined",
+    "v": 1
+  },
+  "body": "Open the Jaeno app to view this message.",
+  "msgtype": "m.text"
+}

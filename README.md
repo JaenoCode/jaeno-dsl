@@ -2,7 +2,17 @@
 
 The source-of-truth JSON Schemas for Jaeno's `ai.jaeno.dsl` messaging system —
 the structured widget cards (menu, payment, appointment, banner, calculator,
-…) that a Jaeno agent sends into a Matrix room and the client renders.
+…) that a Jaeno agent sends into a Matrix room and the client renders — plus
+the reference **Python sender package** under `python/`.
+
+```
+schemas/     JSON Schema per (type, version) — the contract
+examples/    a valid example payload per pair, 1:1 with schemas/
+roundtrip/   the full Matrix event content the Python sender emits per pair
+             (the conformance set the Flutter client's round-trip test checks)
+python/      the reference sender: `pip install`-able, generated from schemas/
+scripts/     validate_dsl_schemas.sh — pinned ajv-cli, runs in CI
+```
 
 One file per `(type, version)` pair:
 
@@ -25,9 +35,11 @@ hand-writes them — so no implementation can drift from the contract:
 
 | Consumer | What it generates |
 |---|---|
-| `JaenoCode/jaeno` (Flutter client) | Dart models + `dsl_generated_validators.dart`, via a git submodule at `dsl/` |
-| `JaenoCode/jaeno` `packages/dsl_py` | Pydantic v2 models + the Python DSL sender package |
-| Web widget (JNO-338) | TypeScript interfaces + validator |
+| `JaenoCode/jaeno` (Flutter client) | Dart models + `dsl_generated_validators.dart`; embeds this repo as a git submodule at `dsl/` |
+| `python/` (this repo) | Pydantic v2 models + the reference DSL sender package — `uv add "jaeno-dsl @ git+https://github.com/JaenoCode/jaeno-dsl@<tag>#subdirectory=python"` |
+| Web widget (JNO-338) | TypeScript interfaces + validator (planned) |
+
+See `python/README.md` for the sender API.
 
 ## Versioning
 
@@ -40,5 +52,8 @@ clients.
 
 1. Edit or add `schemas/<type>.v<version>.json` and its `examples/` twin.
 2. `./scripts/validate_dsl_schemas.sh` (needs `npx`).
-3. Open a PR here. On merge, tag a release.
-4. In each consumer, bump the submodule / dependency and regenerate.
+3. `./python/scripts/generate_models.sh` and commit the regenerated `python/`
+   + `roundtrip/`.
+4. Open a PR here. On merge, tag a release.
+5. In `JaenoCode/jaeno`: bump the `dsl/` submodule, rerun
+   `./scripts/generate_dsl_models.sh`, commit.
