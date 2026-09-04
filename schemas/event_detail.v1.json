@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/event_detail.v1.json",
+  "title": "event_detail v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "event_detail"
+    },
+    "data": {
+      "type": "object",
+      "description": "One event in full. Capacity, holds and releases live entirely in the business's agent — 'remaining' below is a number the agent chose to show, not a figure Jaeno tracks or can keep current.",
+      "additionalProperties": true,
+      "required": [
+        "id",
+        "title",
+        "starts_at",
+        "location_type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier, echoed back on ticket_request. Opaque to Jaeno."
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "starts_at": {
+          "type": "string",
+          "description": "ISO-8601. Rendered as d/m/y plus HH:mm; an unparseable value renders as-is rather than being dropped."
+        },
+        "ends_at": {
+          "type": "string",
+          "description": "ISO-8601. When present and on the same day as starts_at, only its time is shown."
+        },
+        "location_type": {
+          "type": "string",
+          "enum": [
+            "in_person",
+            "online"
+          ]
+        },
+        "location": {
+          "type": "string",
+          "description": "Venue, for location_type in_person."
+        },
+        "online_url": {
+          "type": "string",
+          "description": "Join link, for location_type online. Rendered as text, not a tappable link — the agent sends it when it decides the customer should have it."
+        },
+        "tiers": {
+          "type": "array",
+          "description": "Ticket tiers, in the order the agent wants them shown.",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "name",
+              "price"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "price": {
+                "type": "string",
+                "description": "Pre-formatted by the agent, same convention as menu item prices — Jaeno does no currency handling."
+              },
+              "remaining": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Optional. 0 renders 'Sold out', a positive number renders 'N left', and omitting it renders neither. Stale the moment it is sent, so an agent that cannot keep it accurate should leave it out rather than send a number that will be wrong."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

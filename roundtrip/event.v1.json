@@ -1,0 +1,36 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "events": [
+        {
+          "ends_at": "2026-09-14T20:00:00+05:00",
+          "id": "evt-cupping-01",
+          "location": "Dot Cafe, DHA Phase 4, Lahore",
+          "location_type": "in_person",
+          "starts_at": "2026-09-14T18:00:00+05:00",
+          "title": "Ethiopia Cupping Session"
+        },
+        {
+          "ends_at": "2026-09-21T18:00:00+05:00",
+          "id": "evt-brewbasics-02",
+          "location_type": "online",
+          "online_url": "https://meet.dotcafe.pk/brew-basics",
+          "starts_at": "2026-09-21T16:30:00+05:00",
+          "title": "Brew Basics: V60 at Home"
+        },
+        {
+          "id": "evt-latteart-03",
+          "location": "Dot Cafe, DHA Phase 4, Lahore",
+          "location_type": "in_person",
+          "starts_at": "2026-10-03T19:00:00+05:00",
+          "title": "Latte Art Throwdown"
+        }
+      ],
+      "title": "What's on at Dot Cafe"
+    },
+    "type": "event",
+    "v": 1
+  },
+  "body": "Events \u2014 What's on at Dot Cafe",
+  "msgtype": "m.text"
+}

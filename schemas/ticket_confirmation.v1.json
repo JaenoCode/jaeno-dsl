@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/ticket_confirmation.v1.json",
+  "title": "ticket_confirmation v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "ticket_confirmation"
+    },
+    "data": {
+      "type": "object",
+      "description": "Agent → client: the customer's proof of reservation. Jaeno has no role in deciding when a confirmation is issued or what counts as a valid reference code — this is purely a render target for whatever the agent secured. Sending one does not make a reservation real; the agent's own backend is the record.",
+      "additionalProperties": true,
+      "required": [
+        "event_id",
+        "event_title",
+        "reference"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "description": "The agent's own identifier, opaque to Jaeno."
+        },
+        "event_title": {
+          "type": "string"
+        },
+        "reference": {
+          "type": "string",
+          "description": "The booking reference the agent issued, rendered verbatim and given the most visual weight on the card. Jaeno neither generates nor checks it."
+        },
+        "tier_name": {
+          "type": "string"
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Defaults to 1 client-side if missing or not an int."
+        },
+        "starts_at": {
+          "type": "string",
+          "description": "ISO-8601. Same rendering as the event cards: d/m/yyyy · HH:mm, unparseable values shown verbatim."
+        },
+        "ends_at": {
+          "type": "string",
+          "description": "ISO-8601. When on the same day as starts_at, only its time is shown."
+        },
+        "location_type": {
+          "type": "string",
+          "enum": [
+            "in_person",
+            "online"
+          ]
+        },
+        "location": {
+          "type": "string",
+          "description": "Venue, for location_type in_person."
+        },
+        "online_url": {
+          "type": "string",
+          "description": "Join link, for location_type online. Rendered as text, not a tappable link."
+        }
+      }
+    }
+  }
+}

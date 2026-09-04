@@ -21,6 +21,8 @@ from .calculator_v1 import CalculatorV1
 from .car_request_v1 import CarRequestV1
 from .car_response_v1 import CarResponseV1
 from .countdown_v1 import CountdownV1
+from .event_detail_v1 import EventDetailV1
+from .event_v1 import EventV1
 from .faq_v1 import FaqV1
 from .fulfillment_method_v1 import FulfillmentMethodV1
 from .fulfillment_selection_v1 import FulfillmentSelectionV1
@@ -46,6 +48,8 @@ from .review_v1 import ReviewV1
 from .terms_history_v1 import TermsHistoryV1
 from .terms_response_v1 import TermsResponseV1
 from .terms_v1 import TermsV1
+from .ticket_confirmation_v1 import TicketConfirmationV1
+from .ticket_request_v1 import TicketRequestV1
 from .tip_declined_v1 import TipDeclinedV1
 from .tip_request_v1 import TipRequestV1
 from .tip_selected_v1 import TipSelectedV1
@@ -86,6 +90,12 @@ DSL_MODELS: dict[str, dict[int, type[BaseModel]]] = {
     },
     "countdown": {
         1: CountdownV1,
+    },
+    "event": {
+        1: EventV1,
+    },
+    "event_detail": {
+        1: EventDetailV1,
     },
     "faq": {
         1: FaqV1,
@@ -155,6 +165,12 @@ DSL_MODELS: dict[str, dict[int, type[BaseModel]]] = {
     },
     "terms_response": {
         1: TermsResponseV1,
+    },
+    "ticket_confirmation": {
+        1: TicketConfirmationV1,
+    },
+    "ticket_request": {
+        1: TicketRequestV1,
     },
     "tip_declined": {
         1: TipDeclinedV1,
