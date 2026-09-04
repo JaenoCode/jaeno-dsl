@@ -1,0 +1,30 @@
+{
+  "v": 1,
+  "type": "event_detail",
+  "data": {
+    "id": "evt-cupping-01",
+    "title": "Ethiopia Cupping Session",
+    "description": "Taste four single-origin Ethiopian lots side by side with our head roaster, and learn how to score them the way the trade does.",
+    "starts_at": "2026-09-14T18:00:00+05:00",
+    "ends_at": "2026-09-14T20:00:00+05:00",
+    "location_type": "in_person",
+    "location": "Dot Cafe, DHA Phase 4, Lahore",
+    "tiers": [
+      {
+        "name": "General",
+        "price": "2500",
+        "remaining": 12
+      },
+      {
+        "name": "Includes 250g bag",
+        "price": "4000",
+        "remaining": 3
+      },
+      {
+        "name": "Early bird",
+        "price": "1800",
+        "remaining": 0
+      }
+    ]
+  }
+}

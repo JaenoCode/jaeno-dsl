@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/ticket_request.v1.json",
+  "title": "ticket_request v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "ticket_request"
+    },
+    "data": {
+      "type": "object",
+      "description": "Client → agent: the tier and quantity a customer picked from an event_detail card, and nothing more. It reserves nothing. Whether the request is accepted, held, repriced or rejected is entirely the agent's call against its own capacity — Jaeno relays the choice and stops there. The client's sold-out and quantity limits are cosmetic, taken from the numbers the agent itself sent, so the agent must re-validate every request.",
+      "additionalProperties": true,
+      "required": [
+        "event_id",
+        "event_title",
+        "tier_name",
+        "price",
+        "quantity"
+      ],
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "description": "Echoed back from the event_detail card. The agent's own identifier, opaque to Jaeno."
+        },
+        "event_title": {
+          "type": "string",
+          "description": "Carried along so the rendered card stands alone — the agent keeps no record of the card it sent."
+        },
+        "tier_name": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string",
+          "description": "The tier's price as the agent formatted it, echoed back unchanged. Per ticket, not a computed total — Jaeno does no arithmetic on money."
+        },
+        "quantity": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

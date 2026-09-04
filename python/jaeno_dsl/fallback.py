@@ -48,6 +48,12 @@ _BUILDERS: dict[str, Callable[[dict[str, Any]], str]] = {
     "terms": lambda d: _join("Agreement", d.get("title")),
     "tip_request": lambda d: d.get("title") or "Add a tip?",
     "auction": lambda d: _join("Auction", d.get("title")),
+    "event": lambda d: _join("Events", d.get("title")),
+    "event_detail": lambda d: _join(d.get("title") or "Event", d.get("location")),
+    "ticket_request": lambda d: _join("Ticket request", d.get("event_title"), d.get("tier_name")),
+    "ticket_confirmation": lambda d: _join(
+        "Tickets confirmed", d.get("event_title"), d.get("reference")
+    ),
 }
 
 

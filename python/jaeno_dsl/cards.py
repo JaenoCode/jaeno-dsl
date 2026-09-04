@@ -133,6 +133,26 @@ def countdown_v1(
     return build_dsl_event_content("countdown", 1, data, body=body, **fields)
 
 
+def event_v1(
+    data: Mapping[str, Any] | None = None,
+    /,
+    *,
+    body: str | None = None,
+    **fields: Any,
+) -> dict[str, Any]:
+    return build_dsl_event_content("event", 1, data, body=body, **fields)
+
+
+def event_detail_v1(
+    data: Mapping[str, Any] | None = None,
+    /,
+    *,
+    body: str | None = None,
+    **fields: Any,
+) -> dict[str, Any]:
+    return build_dsl_event_content("event_detail", 1, data, body=body, **fields)
+
+
 def faq_v1(
     data: Mapping[str, Any] | None = None,
     /,
@@ -383,6 +403,26 @@ def terms_response_v1(
     return build_dsl_event_content("terms_response", 1, data, body=body, **fields)
 
 
+def ticket_confirmation_v1(
+    data: Mapping[str, Any] | None = None,
+    /,
+    *,
+    body: str | None = None,
+    **fields: Any,
+) -> dict[str, Any]:
+    return build_dsl_event_content("ticket_confirmation", 1, data, body=body, **fields)
+
+
+def ticket_request_v1(
+    data: Mapping[str, Any] | None = None,
+    /,
+    *,
+    body: str | None = None,
+    **fields: Any,
+) -> dict[str, Any]:
+    return build_dsl_event_content("ticket_request", 1, data, body=body, **fields)
+
+
 def tip_declined_v1(
     data: Mapping[str, Any] | None = None,
     /,
@@ -426,6 +466,8 @@ CARD_CONSTRUCTORS: dict[tuple[str, int], Callable[..., dict[str, Any]]] = {
     ("car_request", 1): car_request_v1,
     ("car_response", 1): car_response_v1,
     ("countdown", 1): countdown_v1,
+    ("event", 1): event_v1,
+    ("event_detail", 1): event_detail_v1,
     ("faq", 1): faq_v1,
     ("fulfillment_method", 1): fulfillment_method_v1,
     ("fulfillment_selection", 1): fulfillment_selection_v1,
@@ -451,6 +493,8 @@ CARD_CONSTRUCTORS: dict[tuple[str, int], Callable[..., dict[str, Any]]] = {
     ("terms", 1): terms_v1,
     ("terms_history", 1): terms_history_v1,
     ("terms_response", 1): terms_response_v1,
+    ("ticket_confirmation", 1): ticket_confirmation_v1,
+    ("ticket_request", 1): ticket_request_v1,
     ("tip_declined", 1): tip_declined_v1,
     ("tip_request", 1): tip_request_v1,
     ("tip_selected", 1): tip_selected_v1,

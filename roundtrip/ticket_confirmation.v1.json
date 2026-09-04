@@ -1,0 +1,19 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "ends_at": "2026-09-14T20:00:00+05:00",
+      "event_id": "evt-cupping-01",
+      "event_title": "Ethiopia Cupping Session",
+      "location": "Dot Cafe, DHA Phase 4, Lahore",
+      "location_type": "in_person",
+      "quantity": 2,
+      "reference": "DOT-4F92KQ",
+      "starts_at": "2026-09-14T18:00:00+05:00",
+      "tier_name": "Includes 250g bag"
+    },
+    "type": "ticket_confirmation",
+    "v": 1
+  },
+  "body": "Tickets confirmed \u2014 Ethiopia Cupping Session \u2014 DOT-4F92KQ",
+  "msgtype": "m.text"
+}

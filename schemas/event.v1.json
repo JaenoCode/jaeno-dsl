@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dsl/event.v1.json",
+  "title": "event v1",
+  "type": "object",
+  "required": [
+    "v",
+    "type",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "type": {
+      "const": "event"
+    },
+    "data": {
+      "type": "object",
+      "description": "A list of events to browse. Every field is owned and populated by the business's own agent — Jaeno keeps no event table and no availability state, and renders exactly what arrives.",
+      "additionalProperties": true,
+      "required": [
+        "title",
+        "events"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "events": {
+          "type": "array",
+          "description": "Rows are display-only in v1. Picking a tier and quantity is ticket_request (JNO-335); until that ships a row has nothing to tap.",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "required": [
+              "id",
+              "title",
+              "starts_at",
+              "location_type"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "description": "The agent's own identifier, echoed back on ticket_request. Opaque to Jaeno."
+              },
+              "title": {
+                "type": "string"
+              },
+              "starts_at": {
+                "type": "string",
+                "description": "ISO-8601. Rendered as d/m/y plus HH:mm; an unparseable value renders as-is rather than being dropped."
+              },
+              "ends_at": {
+                "type": "string",
+                "description": "ISO-8601. When present and on the same day as starts_at, only its time is shown."
+              },
+              "location_type": {
+                "type": "string",
+                "enum": [
+                  "in_person",
+                  "online"
+                ]
+              },
+              "location": {
+                "type": "string",
+                "description": "Venue, for location_type in_person."
+              },
+              "online_url": {
+                "type": "string",
+                "description": "Join link, for location_type online. Rendered as text, not a tappable link — the agent sends it when it decides the customer should have it."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "ai.jaeno.dsl": {
+    "data": {
+      "event_id": "evt-cupping-01",
+      "event_title": "Ethiopia Cupping Session",
+      "price": "4000",
+      "quantity": 2,
+      "tier_name": "Includes 250g bag"
+    },
+    "type": "ticket_request",
+    "v": 1
+  },
+  "body": "Ticket request \u2014 Ethiopia Cupping Session \u2014 Includes 250g bag",
+  "msgtype": "m.text"
+}

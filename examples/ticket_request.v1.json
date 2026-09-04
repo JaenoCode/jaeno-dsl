@@ -1,0 +1,11 @@
+{
+  "v": 1,
+  "type": "ticket_request",
+  "data": {
+    "event_id": "evt-cupping-01",
+    "event_title": "Ethiopia Cupping Session",
+    "tier_name": "Includes 250g bag",
+    "price": "4000",
+    "quantity": 2
+  }
+}
